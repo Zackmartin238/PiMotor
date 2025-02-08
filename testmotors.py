@@ -58,5 +58,8 @@ except KeyboardInterrupt:
     print("Stopping motors...")
 
 finally:
+    print("Cleaning up GPIO...")
     stop_motors()
+    pwm_A.stop()  # Stop PWM before cleanup
+    pwm_B.stop()
     GPIO.cleanup()
