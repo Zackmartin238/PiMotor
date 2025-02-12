@@ -22,14 +22,14 @@ pwm_B.start(0)
 
 def set_motor_a(direction, speed):
     """Controls Motor A (left motor)."""
-    GPIO.output(IN1, GPIO.HIGH if direction == "forward" else GPIO.LOW)
-    GPIO.output(IN2, GPIO.LOW if direction == "forward" else GPIO.HIGH)
+    GPIO.output(IN1, GPIO.LOW if direction == "forward" else GPIO.HIGH)
+    GPIO.output(IN2, GPIO.HIGH if direction == "forward" else GPIO.LOW)
     pwm_A.ChangeDutyCycle(speed)  # Set speed (0-100)
 
 def set_motor_b(direction, speed):
     """Controls Motor B (right motor)."""
-    GPIO.output(IN1, GPIO.LOW if direction == "forward" else GPIO.HIGH)
-    GPIO.output(IN2, GPIO.HIGH if direction == "forward" else GPIO.LOW)
+    GPIO.output(IN3, GPIO.HIGH if direction == "forward" else GPIO.LOW)
+    GPIO.output(IN4, GPIO.LOW if direction == "forward" else GPIO.HIGH)
     pwm_B.ChangeDutyCycle(speed)  # Set speed (0-100)
 
 def stop_motors():
