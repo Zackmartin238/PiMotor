@@ -42,13 +42,13 @@ try:
     print("Motors running...")
     
     # Move forward at 50% speed
-    set_motor_a("forward", 50)
-    set_motor_b("forward", 50)
+    set_motor_a("forward", 100)
+    set_motor_b("forward", 100)
     time.sleep(2)
 
     # Move backward at 75% speed
-    set_motor_a("backward", 75)
-    set_motor_b("backward", 75)
+    set_motor_a("forward", 100)
+    set_motor_b("forward", 100)
     time.sleep(2)
 
     # Stop
