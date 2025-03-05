@@ -48,14 +48,21 @@ try:
     
 
 
-    set_motor_a("forward", 100)
-    set_motor_b("forward", 100)
-    time.sleep(10000)
+    set_motor_a("forward", 50)
+    set_motor_b("forward", 50)
+    time.sleep(4)
 
     print("backwards?")
     set_motor_a("backwards", 50)
     set_motor_b("backwards", 50)
+    time.sleep(4)
 
+    set_motor_a("forwards", 50)
+    set_motor_b("backwards", 50)
+    time.sleep(2)
+
+    set_motor_b("backwards", 50)
+    set_motor_a("forwards", 50)
 
     # Stop
     stop_motors()
