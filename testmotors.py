@@ -64,8 +64,8 @@ try:
     time.sleep(2)
     stop_motors()
     print("Turn two")
-    set_motor_a"backward", 100)  # Max speed (100%)
-    set_motor_b"forward", 100)  # Max speed (100%)
+    set_motor_a("backward", 100)  # Max speed (100%)
+    set_motor_b("forward", 100)  # Max speed (100%)
     time.sleep(2)
 
     # Stop motors
@@ -79,4 +79,4 @@ finally:
 
     # Clean up GPIO pins
     GPIO.cleanup
-    
+
