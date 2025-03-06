@@ -44,6 +44,7 @@ def stop_motors():
     """Stops both motors."""
     pwm_A.ChangeDutyCycle(0)
     pwm_B.ChangeDutyCycle(0)
+    time.sleep(1)
 
 # Example Usage
 try:
@@ -51,12 +52,12 @@ try:
 
     set_motor_a("forward", 100)  # Max speed (100%)
     set_motor_b("forward", 100)  # Max speed (100%)
-    time.sleep(4)
+    time.sleep(2)
     stop_motors()
     print("backwards at max speed?")
     set_motor_a("backward", 100)  # Max speed (100%)
     set_motor_b("backward", 100)  # Max speed (100%)
-    time.sleep(4)
+    time.sleep(2)
     stop_motors()
     print("Turn one")
     set_motor_a("forward", 100)  # Max speed (100%)
