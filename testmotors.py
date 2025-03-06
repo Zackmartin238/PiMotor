@@ -62,9 +62,10 @@ try:
     set_motor_b("backward", 100)  # Max speed (100%)
     time.sleep(2)
 
+
     set_motor_b("backward", 100)  # Max speed (100%)
     set_motor_a("forward", 100)  # Max speed (100%)
-
+    time.sleep(2)
     # Stop
     stop_motors()
 
@@ -73,9 +74,4 @@ except KeyboardInterrupt:
 
 finally:
     print("Cleaning up GPIO...")
-    stop_motors()
-    if pwm_A is not None:
-        pwm_A.stop()  # Stop PWM before cleanup
-    if pwm_B is not None:
-        pwm_B.stop()
     GPIO.cleanup()
