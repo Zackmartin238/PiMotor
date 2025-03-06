@@ -58,11 +58,12 @@ try:
     set_motor_b("backward", 100)  # Max speed (100%)
     time.sleep(4)
 
+    print("Turn one")
     set_motor_a("forward", 100)  # Max speed (100%)
     set_motor_b("backward", 100)  # Max speed (100%)
     time.sleep(2)
 
-
+    print("Turn two")
     set_motor_b("backward", 100)  # Max speed (100%)
     set_motor_a("forward", 100)  # Max speed (100%)
     time.sleep(2)
