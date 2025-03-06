@@ -41,12 +41,6 @@ def stop_motors():
 # Example Usage
 try:
     print("Motors running...")
-    
-
-    set_motor_a("forward", 100)
-    set_motor_b("forward", 100)
-    
-
 
     set_motor_a("forward", 50)
     set_motor_b("forward", 50)
