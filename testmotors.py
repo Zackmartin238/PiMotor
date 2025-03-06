@@ -21,17 +21,24 @@ pwm_A.start(0)  # Start PWM with 0% duty cycle (off)
 pwm_B.start(0)
 
 def set_motor_a(direction, speed):
-    #Left motor
-    GPIO.output(IN1, GPIO.LOW if direction == "forward" else GPIO.HIGH)
-    GPIO.output(IN2, GPIO.HIGH if direction == "forward" else GPIO.LOW)
+    # Left motor
+    if direction == "forward":
+        GPIO.output(IN1, GPIO.LOW)
+        GPIO.output(IN2, GPIO.HIGH)
+    elif direction == "backward":
+        GPIO.output(IN1, GPIO.HIGH)
+        GPIO.output(IN2, GPIO.LOW)
     pwm_A.ChangeDutyCycle(speed)
 
 def set_motor_b(direction, speed):
-    #Right motor
-    GPIO.output(IN3, GPIO.LOW if direction == "forward" else GPIO.HIGH)
-    GPIO.output(IN4, GPIO.HIGH if direction == "forward" else GPIO.LOW)
+    # Right motor
+    if direction == "forward":
+        GPIO.output(IN3, GPIO.LOW)
+        GPIO.output(IN4, GPIO.HIGH)
+    elif direction == "backward":
+        GPIO.output(IN3, GPIO.HIGH)
+        GPIO.output(IN4, GPIO.LOW)
     pwm_B.ChangeDutyCycle(speed)
-
 
 def stop_motors():
     """Stops both motors."""
@@ -47,16 +54,16 @@ try:
     time.sleep(4)
 
     print("backwards?")
-    set_motor_a("backwards", 50)
-    set_motor_b("backwards", 50)
+    set_motor_a("backward", 50)
+    set_motor_b("backward", 50)
     time.sleep(4)
 
-    set_motor_a("forwards", 50)
-    set_motor_b("backwards", 50)
+    set_motor_a("forward", 50)
+    set_motor_b("backward", 50)
     time.sleep(2)
 
-    set_motor_b("backwards", 50)
-    set_motor_a("forwards", 50)
+    set_motor_b("backward", 50)
+    set_motor_a("forward", 50)
 
     # Stop
     stop_motors()
